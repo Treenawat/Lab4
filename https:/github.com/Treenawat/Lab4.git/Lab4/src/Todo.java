@@ -1,12 +1,12 @@
 public class Todo {/*
-Lab Section_________: 12
-Last Modified_______: 2019-01-24
-OU ID_______________: 113470031
-OU EMAIL____________: Treenawat.Manomairat-1@ou.edu
+Lab Section_________: XX
+Last Modified_______: 20XX-XX-XX
+OU ID_______________: XXXXXXXXX
+OU EMAIL____________: XXX@ou.edu
 
 Tasks:
-1. Finish animal and equipment
-2. Finish animaltest, equipmenttest and zootest
+1. XXX
+2. XXX
 
 Estimated Time (minutes):
 1. XXX
