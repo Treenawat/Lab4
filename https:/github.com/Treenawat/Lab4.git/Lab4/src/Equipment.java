@@ -121,6 +121,37 @@ public class Equipment
 
         // Cast object to Equipment type to compare member variables:
         Equipment otherEq = (Equipment)other;
+        
+        boolean sameName = this.getName().equals(otherEq.getName());
+        boolean sameCount = false;
+        boolean sameWeight = false;
+        boolean sameHeight = false;
+        boolean sameDescription = this.getDescription().equals(otherEq.getDescription());
+        
+        if (otherEq.getName().equals(this.getName())){
+        	sameName = true;
+        }
+         
+        if (otherEq.count == this.count){
+        	sameCount = true;
+        }
+        
+        if (Double.compare(otherEq.totalWeight,this.totalWeight)==0){
+        	sameWeight = true;
+        }
+        
+        if (Double.compare(otherEq.totalPrice,this.totalPrice)==0){
+        	sameHeight = true;
+        }
+        
+        if (otherEq.getDescription().equalsIgnoreCase(this.getDescription())){
+        	sameDescription = true;
+        }
+        
+        if (sameName == true && sameCount == true && sameWeight == true && sameHeight == true && sameDescription == true) {
+        	return true;
+        }
+        else return false;
 
         // Check that all fields match (name, count, totalWeight, totalPrice, and description):
       
