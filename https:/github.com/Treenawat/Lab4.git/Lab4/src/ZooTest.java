@@ -1,35 +1,33 @@
 public class ZooTest
 {
-
-    /**
-     * Test the empty Animal constructor and the getters
-     */
-    public void emptyConstructorTest() throws AssertException
-    {
-        // Use the default constructor
-        Animal animal = new Animal();
-
-        // The name should be "noname", color "unknown", height and weight 0.
-        Assert.assertEquals("unknown", animal.getColor());
-        Assert.assertEquals("noname", animal.getName());
-        Assert.assertEquals(0, animal.getHeight(), 0.01);
-        Assert.assertEquals(0, animal.getWeight(), 0.01);
-    }
-
-    // TODO: test full constructor, getters, and toString
-    public void fullConstructortTest() throws AssertException{
-    	Animal animal = new Animal();
-    	Assert.assertEquals("Orange", animal.getColor());
-        Assert.assertEquals("Tony", animal.getName());
-        Assert.assertEquals(200.5, animal.getHeight(), 0.01);
-        Assert.assertEquals(15, animal.getWeight(), 0.01);
+	public void testTotalHeight () throws AssertException {
+		Animal animal = new Animal("Orange", "Jacky", 100.0, 20.0);
+		Animal animal2 = new Animal("Blue", "Bat", 300.0, 15.0);
+		Animal animal3 = new Animal("Red", "Dan", 500.0, 50.0);
+		
+		Zoo zoo = new Zoo(3);
+		zoo.addAnimal(animal);
+		zoo.addAnimal(animal2);
+		zoo.addAnimal(animal3);
+		double total = 85.0;
+		
+		Assert.assertEquals(total, zoo.getTotalHeight());
+	}
+    public void getCapacity() throws AssertException{
+    	int num = 5;
+    	Zoo zoo = new Zoo(num);
+    	
+    	Assert.assertEquals(num, zoo.getCapacity());
     }
     
-    public void String() throws AssertException{
-    	Animal animal = new Animal();
-    	Assert.assertEquals("Tony, a Orange-colored animal. 200.5 pounds, 15.0 inches", animal.toString());
+    public void testToString() throws AssertException{
+    	Zoo zoo = new Zoo(5);
+    	Animal animal = new Animal("Orange", "Jacky", 100.0, 20.0);
+		Animal animal2 = new Animal("Blue", "Bat", 300.0, 15.0);
+    	Animal animal3 = new Animal("Red", "Dan", 500.0, 50.0);
+    	zoo.addAnimal(animal3);
+    	
+    	Assert.assertEquals("These animals live in the zoo: \nDan, a Red-colored animal. 500.0 pounds, 50.0 inches\n", zoo.toString());
     }
-    
-    
 }
 
